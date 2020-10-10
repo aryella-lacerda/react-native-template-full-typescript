@@ -1,13 +1,17 @@
-import React from 'react';
-import {createStackNavigator} from '@react-navigation/stack';
-import {RootContainer} from '../Containers';
+import React from 'react'
+import { createStackNavigator } from '@react-navigation/stack'
+import { RootContainer } from '../Containers'
 
-const Stack = createStackNavigator();
+export type RootNavigatorParams = {
+  Root: undefined
+}
 
-export const RootNavigator = () => {
+const Stack = createStackNavigator<RootNavigatorParams>()
+
+export const RootNavigator = (): JSX.Element => {
   return (
     <Stack.Navigator>
       <Stack.Screen name="Root" component={RootContainer} />
     </Stack.Navigator>
-  );
-};
+  )
+}
