@@ -1,6 +1,5 @@
 module.exports = {
   root: true,
-  extends: '@react-native-community',
   parser: '@typescript-eslint/parser', // Specifies the ESLint parser
   parserOptions: {
     ecmaVersion: 2020, // Allows for the parsing of modern ECMAScript features
@@ -14,7 +13,29 @@ module.exports = {
       version: 'detect', // Tells eslint-plugin-react to automatically detect the version of React to use
     },
   },
+  env: {
+    jest: true,
+    'detox/detox': true,
+    'jest/globals': true,
+  },
+  plugins: [
+    // Most of these plugins come with @react-native-community
+    'react',
+    'react-native',
+    'jsx-a11y',
+    'import',
+    'prettier',
+    'react-hooks',
+    'jest',
+    'detox',
+    'eslint-comments',
+  ],
+  ignorePatterns: ['node_modules/', 'coverage/'],
   extends: [
+    '@react-native-community',
+    'eslint:recommended',
+    'plugin:import/typescript',
+    'plugin:jsx-a11y/recommended',
     'plugin:react/recommended', // Uses the recommended rules from @eslint-plugin-react
     'plugin:@typescript-eslint/recommended', // Uses the recommended rules from the @typescript-eslint/eslint-plugin
     'prettier/@typescript-eslint', // Uses eslint-config-prettier to disable ESLint rules from @typescript-eslint/eslint-plugin that would conflict with prettier
@@ -23,5 +44,6 @@ module.exports = {
   rules: {
     // Place to specify ESLint rules. Can be used to overwrite rules specified from the extended configs
     // e.g. "@typescript-eslint/explicit-function-return-type": "off",
+    // 'react/react-in-jsx-scope': "off"
   },
 }
