@@ -9,7 +9,9 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "test:unit": "jest",
     "test:e2e:build": "detox build --configuration ios.sim.release",
-    "test:e2e:run": "detox test --configuration ios.sim.release"
+    "test:e2e:run": "detox test --configuration ios.sim.release",
+    "release": "standard-version",
+    "release:beta": "standard-version --prerelease beta"
   },
   "dependencies": {
     "@react-native-community/async-storage": "^1.12.1",
@@ -55,6 +57,7 @@
     "metro-react-native-babel-preset": "^0.59.0",
     "prettier": "^2.1.2",
     "react-test-renderer": "16.13.1",
+    "standard-version": "^9.0.0",
     "typescript": "^3.8.3"
   }
 }
