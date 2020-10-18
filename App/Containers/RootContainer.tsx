@@ -33,7 +33,7 @@ export const RootContainer: React.FC<Props> = () => {
   return (
     <NavigationContainer>
       <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
+      <SafeAreaView testID={'e2e-smoke-test'}>
         <ScrollView contentInsetAdjustmentBehavior="automatic" style={styles.scrollView}>
           <Header />
           {global.HermesInternal == null ? null : (
