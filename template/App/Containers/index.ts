@@ -1,1 +1,2 @@
-export * from './RootContainer'
+export * from './ConfigContainer'
+export * from './ProviderContainer'

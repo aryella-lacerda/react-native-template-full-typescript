@@ -1,17 +1,18 @@
 import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
-import { RootContainer } from '../Containers'
+
+import ExampleFeature from '../Features/Example'
 
 export type RootNavigatorParams = {
-  Root: undefined
+  Example: undefined
 }
 
 const Stack = createStackNavigator<RootNavigatorParams>()
 
-export const RootNavigator = (): JSX.Element => {
+export const RootStack = (): JSX.Element => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Root" component={RootContainer} />
+      <Stack.Screen name="Example" component={ExampleFeature.screens.ExampleScreen} />
     </Stack.Navigator>
   )
 }
